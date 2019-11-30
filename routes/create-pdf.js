@@ -1,7 +1,7 @@
-var express = require("express");
-var fs = require("fs");
-var router = express.Router();
-var PDFDocument = require("pdfkit");
+const express = require("express");
+const fs = require("fs");
+const PDFDocument = require("pdfkit");
+const router = express.Router();
 
 const names = [
   { filename: "Victor" },
@@ -9,7 +9,7 @@ const names = [
   { filename: "Cris" }
 ];
 
-router.post("/", function(req, res, next) {
+router.post("/", (req, res) => {
   try {
     names.map(name => {
       const doc = new PDFDocument({
